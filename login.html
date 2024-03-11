@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客 - 登录</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="content container">
+        <h2>登录</h2>
+        <form action="{{ url_for('login') }}" method="post">
+            <div class="form-group">
+                <label for="username">用户名:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">密码:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group action-buttons">
+                <input type="submit" value="登录" class="btn">
+                <!-- 注意: 删除了原有的注册按钮，提供一个链接到注册页面的选项 -->
+            </div>
+        </form>
+        <p class="redirect-register">
+            没有账户？<a href="{{ url_for('register') }}">注册一个</a>
+        </p>
+    </div>
+    <footer>
+        <p>&copy; 2024 柯文博的个人博客. 所有权利保留。</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客 - 发布文章</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="content container">
+        <h2>发布文章</h2>
+        <form action="{{ url_for('publish') }}" method="post">
+            <div class="form-group">
+                <label for="title">标题:</label>
+                <input type="text" id="title" name="title" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="content">内容:</label>
+                <textarea id="content" name="content" required class="form-control"></textarea>
+            </div>
+            <div class="form-group action-buttons">
+                <input type="submit" value="发布文章" class="btn">
+            </div>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 柯文博的个人博客. 所有权利保留。</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
